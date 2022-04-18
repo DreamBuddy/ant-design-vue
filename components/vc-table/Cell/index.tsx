@@ -130,18 +130,18 @@ export default defineComponent<CellProps>({
     // ====================== Hover =======================
     const onMouseenter = (event: MouseEvent, mergedRowSpan: number) => {
       const { record, index, additionalProps } = props;
-      if (record) {
-        onHover(index, index + mergedRowSpan - 1);
-      }
+//       if (record) {
+//         onHover(index, index + mergedRowSpan - 1);
+//       }
 
       additionalProps?.onMouseenter?.(event);
     };
 
     const onMouseleave: MouseEventHandler = event => {
       const { record, additionalProps } = props;
-      if (record) {
-        onHover(-1, -1);
-      }
+//       if (record) {
+//         onHover(-1, -1);
+//       }
 
       additionalProps?.onMouseleave?.(event);
     };
@@ -326,7 +326,7 @@ export default defineComponent<CellProps>({
             [`${cellPrefixCls}-with-append`]: appendNode,
             [`${cellPrefixCls}-fix-sticky`]:
               (isFixLeft || isFixRight) && isSticky && supportSticky.value,
-            [`${cellPrefixCls}-row-hover`]: !cellProps && hovering.value,
+//             [`${cellPrefixCls}-row-hover`]: !cellProps && hovering.value,
           },
           additionalProps.class,
           cellClassName,
